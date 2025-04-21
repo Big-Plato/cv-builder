@@ -1,4 +1,4 @@
-export default function Field({ text, type, className, placeholder, pattern = ""}) {
+export default function Field({ text, width, type, className, placeholder, pattern = ""}) {
         const inputId = crypto.randomUUID;
 
     return (
@@ -6,6 +6,7 @@ export default function Field({ text, type, className, placeholder, pattern = ""
             <label htmlFor={inputId}>
                 {text}
                 <input 
+                width={width}
                 className={className}
                 type={type} 
                 placeholder={placeholder}
