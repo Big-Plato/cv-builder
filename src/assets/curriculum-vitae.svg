@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" id="curriculum-vitae">
+  <circle cx="20" cy="10" r="4"></circle>
+  <path d="M15,22H27a7,7,0,0,0-14,0h2Z"></path>
+  <rect width="34" height="2" x="11" y="24"></rect>
+  <rect width="34" height="2" x="11" y="30"></rect>
+  <rect width="34" height="2" x="11" y="36"></rect>
+  <rect width="34" height="2" x="11" y="42"></rect>
+  <rect width="34" height="2" x="11" y="48"></rect>
+  <rect width="12" height="2" x="33" y="6"></rect>
+  <rect width="12" height="2" x="33" y="13"></rect>
+  <rect width="12" height="2" x="33" y="20"></rect>
+  <path d="M48,2H8A1,1,0,0,0,7,3V53a1,1,0,0,0,1,1h3v3a1,1,0,0,0,1,1h3v3a1,1,0,0,0,1,1H56a1,1,0,0,0,1-1V11a1,1,0,0,0-1-1H53V7a1,1,0,0,0-1-1H49V3A1,1,0,0,0,48,2ZM9,52V4H47V52Zm43,6a1,1,0,0,0,1-1V12h2V60H17V58Z"></path>
+</svg>
