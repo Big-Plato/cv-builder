@@ -1,23 +1,16 @@
-export default function Field(props) {
-    const fieldStyle = {
-        type: props.type,
-        placeholder: props.placeholder,
-        id: crypto.randomUUID,
-        autocomplete: "on",
-        pattern: props.pattern,
-        class: props.class,
-        text: props.text
-    }
+export default function Field({ text, type, className, placeholder, pattern = ""}) {
+        const inputId = crypto.randomUUID;
 
     return (
         <>
-            <label for={props.id}>
-                {props.text}
+            <label htmlFor={inputId}>
+                {text}
                 <input 
-                className={props.class}
-                type={props.type} 
-                placeholder={props.placeholder}
-                id={props.id} />
+                className={className}
+                type={type} 
+                placeholder={placeholder}
+                id={inputId} 
+                autoComplete="on"/>
             </label>
         </>
     )
