@@ -42,12 +42,15 @@ export default function Form() {
                 </fieldset>
 
                 <fieldset className="second-field">
-                    <Menu title="Education" />
-
+                    <Menu title="Education" 
+                        textOne="University"
+                        textTwo="Course" />
                 </fieldset>
 
                 <fieldset className="second-field">
-                    <Menu title="Experience" />
+                    <Menu title="Experience" 
+                        textOne="Company"
+                        textTwo="Function" />
                 </fieldset>
                 <div>
                 <Button type="submit" className="submit-button" text="Submit" />
