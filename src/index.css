@@ -181,3 +181,42 @@ input {
   justify-content: space-around;
 }
 
+/* Page */
+.icon {
+  width: 15px;
+  height: 15px;
+}
+
+.main-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.info-block {
+  display: flex;
+  align-items: center;
+}
+
+hr {
+  border: 2px solid black;
+  width: 80%;
+}
+
+.cv-page h1 {
+  text-align: center;
+}
+
+.resume, .education, .experience {
+  padding: 20px;
+  text-align: justify;
+}
+
+.education *, .experience * {
+  margin: 0;
+}
+
+
+
+
