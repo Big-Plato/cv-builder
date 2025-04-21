@@ -1,11 +1,7 @@
 
-export default function Button(props) {
-    const buttonStyle = {
-        text: props.text,
-        classname: props.class
-    };
+export default function Button({ type, img, className, text }) {
 
     return (
-        <button className={props.class}>{props.text}</button>
+        <button backgroundImage={img} type={type} className={className}>{text}</button>
     )
 }
