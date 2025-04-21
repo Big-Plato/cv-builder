@@ -1,5 +1,6 @@
 import Button from "../Button.jsx"
 import Field from "../Field.jsx"
+import Menu from "../Menu.jsx"
 
 export default function Form() {
     
@@ -26,12 +27,6 @@ export default function Form() {
                     />
 
                     <Field
-                        text="Github"
-                        type="text"
-                        placeholder="github.com/john-doe"
-                    />
-
-                    <Field
                         text="LinkedIn"
                         type="text"
                         placeholder="linkedin.com/in/john-doe/"
@@ -40,16 +35,22 @@ export default function Form() {
                     <Field
                         text="Telephone"
                     />
+
+                    <Field 
+                        text="Address"
+                    />
                 </fieldset>
 
                 <fieldset className="second-field">
-                    <Field
-                        text="Education"
-                    />
+                    <Menu title="Education" />
 
                 </fieldset>
+
+                <fieldset className="second-field">
+                    <Menu title="Experience" />
+                </fieldset>
                 <div>
-                <Button className="submit-button" text="Submit" />
+                <Button type="submit" className="submit-button" text="Submit" />
             </div>
             </div>
             
