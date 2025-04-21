@@ -1,12 +1,12 @@
 import Button from "../Button.jsx";
 
-export default function Page(props) {
+export default function Page() {
     return (
         <div className="cv-page-bg">
             <div className="cv-page">
 
             </div>
-            <Button />
+            <Button backgroundImage='./assets/print.svg' className="print-button" />
         </div>
     )
 }
