@@ -1,12 +1,19 @@
 import Button from "../Button.jsx"
 import Field from "../Field.jsx"
 import Menu from "../Menu.jsx"
+import { getFormInfo } from "../../utils/getFormInfo.js"
 
 export default function Form() {
+
+    const handleFormData = (e) => {
+        e.preventDefault();
+        const info = e.target;
+        console.log(info);
+    } 
     
     return (
         <>
-            <div className="form">
+            <form onSubmit={getFormInfo} className="form">
                 <fieldset className="first-field">
                     <Field
                         text="First Name"
@@ -50,8 +57,15 @@ export default function Form() {
                         text="Address"
                         placeholder="Street Marginal Santos City, State"
                         pattern="^[A-Za-zÀ-ÿ0-9\s]+,\s*[A-Za-zÀ-ÿ\s]+,\s*[A-Za-zÀ-ÿ]{2}$"
+                        name="address"
                     />
                 </fieldset>
+
+                <Button 
+                    type="submit" 
+                    className="submit-button" 
+                    text="Submit" 
+                />
 
                 <fieldset className="second-field">
                     <Menu title="Education" 
@@ -62,12 +76,13 @@ export default function Form() {
                 <fieldset className="second-field">
                     <Menu title="Experience" 
                         textOne="Company"
-                        textTwo="Function" />
+                        textTwo="Function" 
+                        name="test" />
                 </fieldset>
                 <div>
-                <Button type="submit" className="submit-button" text="Submit" />
+                
             </div>
-            </div>
+            </form>
             
             
         </>
