@@ -7,7 +7,7 @@ export default function Menu({ title, textOne, textTwo }) {
 
     const buttonImg = isOpen ? 'src/assets/top-arrow.svg' : 'src/assets/bottom.svg';
 
-    const idImg = `${crypto.randomUUID()}`;
+    const idImg = crypto.randomUUID();
 
     return (
         <>
@@ -32,10 +32,10 @@ export default function Menu({ title, textOne, textTwo }) {
             {isModalOpen && (
                 <div className="modal">
                     <div className="modal-content">
-                        <Field type="text" text={textOne} />
-                        <Field type="text" text={textTwo} />
-                        <Field type="date" text="Start Date" width="50px"/>
-                        <Field type="date" text="End Date" />
+                        <Field name="firstField" type="text" text={textOne} />
+                        <Field name="secondField" type="text" text={textTwo} />
+                        <Field name="startDate" type="date" text="Start Date" width="50px"/>
+                        <Field name="endDate" type="date" text="End Date" />
                         <div className="button-menu-div">
                             <button className="submit-button" type="submit">
                             Create
