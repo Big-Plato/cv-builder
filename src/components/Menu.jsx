@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Field from "./Field.jsx"
 
-export default function Menu({ title, textOne, textTwo }) {
+export default function Menu({ modal, title, textOne, textTwo }) {
     const [isOpen, setIsOpen] = useState(false);
     const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -32,10 +32,10 @@ export default function Menu({ title, textOne, textTwo }) {
             {isModalOpen && (
                 <div className="modal">
                     <div className="modal-content">
-                        <Field name="firstField" type="text" text={textOne} />
-                        <Field name="secondField" type="text" text={textTwo} />
-                        <Field name="startDate" type="date" text="Start Date" width="50px"/>
-                        <Field name="endDate" type="date" text="End Date" />
+                        <Field name={modal.firstField} type="text" text={textOne} />
+                        <Field name={modal.secondField} type="text" text={textTwo} />
+                        <Field name={modal.initialDate} type="date" text="Start Date" width="50px"/>
+                        <Field name={modal.finalDate} type="date" text="End Date" />
                         <div className="button-menu-div">
                             <button className="submit-button" type="submit">
                             Create
