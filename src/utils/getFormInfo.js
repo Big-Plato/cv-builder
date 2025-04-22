@@ -8,11 +8,17 @@ export const getFormInfo = (e) => {
     const linkedIn = e.target.linkedin.value;
     const telephone = e.target.telephone.value;
 
-    // Second part
-    const firstField = e.target.firstField.value;
-    const secondField = e.target.secondField.value;
-    const startDate = e.target.startDate.value;
-    const endDate = e.target.endDate.value;
+    // Course part
+    const university = e.target.university.value;
+    const course = e.target.course.value;
+    const startCourse = e.target.initialCourse.value;
+    const endCourse = e.target.finalCourse.value;
+
+    // Job part
+    const company = e.target.company.value;
+    const job = e.target.job.value;
+    const initialJob = e.target.initialJob.value;
+    const endJob = e.target.finalJob.value;
     
     console.log({ 
         firstName, 
@@ -20,9 +26,13 @@ export const getFormInfo = (e) => {
         eMail, 
         linkedIn, 
         telephone,
-        firstField,
-        secondField,
-        startDate,
-        endDate
+        university,
+        course,
+        startCourse,
+        endCourse,
+        company, 
+        job,
+        initialJob,
+        endJob
      });
 }
