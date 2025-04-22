@@ -10,6 +10,23 @@ export default function Form() {
         const info = e.target;
         console.log(info);
     } 
+
+   
+    const modalOne =  {
+        firstField: "university",
+        secondField: "course",
+        initialDate: "initialCourse",
+        finalDate: "finalCourse"
+    }
+
+
+    const modalTwo = {
+        firstField: "company",
+        secondField: "job",
+        initialDate: "initialJob",
+        finalDate: "finalJob"
+    }
+
     
     return (
         <>
@@ -70,14 +87,16 @@ export default function Form() {
                 <fieldset className="second-field">
                     <Menu title="Education" 
                         textOne="University"
-                        textTwo="Course" />
+                        textTwo="Course" 
+                        modal={modalOne}
+/>
                 </fieldset>
 
                 <fieldset className="second-field">
                     <Menu title="Experience" 
                         textOne="Company"
                         textTwo="Function" 
-                        name="test" />
+                        modal={modalTwo} />
                 </fieldset>
                 <div>
                 
