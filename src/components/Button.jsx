@@ -1,7 +1,7 @@
-
-export default function Button({ type, img, className, text }) {
-
-    return (
-        <button backgroundimage={img} type={type} className={className}>{text}</button>
-    )
+export default function Button({ className, text }) {
+  return (
+    <button className={className}>
+      {text}
+    </button>
+  );
 }
