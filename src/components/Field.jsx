@@ -1,5 +1,6 @@
-export default function Field({ text, width, type, className, placeholder, pattern = ""}) {
-        const inputId = crypto.randomUUID;
+export default function Field({ name, text, width, type, className, placeholder, pattern = ""}) {
+    
+    const inputId = crypto.randomUUID();
 
     return (
         <>
@@ -7,6 +8,7 @@ export default function Field({ text, width, type, className, placeholder, patte
                 {text}
                 <input 
                 width={width}
+                name={name}
                 className={className}
                 type={type} 
                 placeholder={placeholder}
