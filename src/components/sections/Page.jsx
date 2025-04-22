@@ -1,72 +1,93 @@
 import Button from "../Button.jsx";
 
-export default function Page() {
-    const imgs = {
-        email: '/src/assets/email.svg',
-        tel: '/src/assets/telephone.svg',
-        linkedin: '/src/assets/linkedin.svg'
-    }
+export default function Page({ formData }) {
+  const imgs = {
+    email: "/src/assets/email.svg",
+    tel: "/src/assets/telephone.svg",
+    linkedin: "/src/assets/linkedin.svg",
+  };
 
-    return (
-        <div className="cv-page-bg">
-            <div className="cv-page">
-                <h1>Luis Octávio</h1>
-                <hr />
-                <div className="main-info">
-                    <div className="info-block">
-                        <img 
-                            className="icon"
-                            src={imgs.email}
-                            alt="email"
-                        />
-                        <p>luisoct@example.com</p>
-                    </div>
-                    <div className="info-block">
-                        <img 
-                            className="icon"
-                            src={imgs.tel} 
-                            alt="telephone" 
-                        />
-                        <p>(21) 9777-7777</p>
-                    </div>
-                    <div className="info-block">
-                        <img 
-                            className="icon"
-                            src={imgs.linkedin} 
-                            alt="telephone" 
-                        />
-                        <p>luis-octavio</p>
-                    </div>
-                </div>
-                <hr />
-                <div className="resume">
-                    <h2>Resume</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec interdum fringilla nulla, non venenatis mi porta in. Curabitur facilisis ligula in lorem fermentum blandit. Vivamus quis vehicula metus. Etiam varius quam nisl, eget luctus tellus vulputate quis. Quisque vestibulum sodales pretium. Fusce et nulla feugiat purus aliquet cursus id ut elit. Donec feugiat ante lectus, consequat gravida dolor venenatis et. Vivamus ullamcorper commodo ornare. Fusce id tempor erat, vitae maximus nunc.</p>
+  const formatDate = (dateString) => {
+    if (!dateString) return "";
+    const [year, month] = dateString.split("-");
+    return `${month}/${year}`;
+  };
 
-                </div>
-                <div className="education">
-                    <h2>Education</h2>
-                    <div>
-                        <h3>Institute</h3>
-                        <h4>Course</h4>
-                        <p>
-                            <span>Start: 02/2025</span>
-                            <br /> 
-                            <span>End: 07/2025</span>    
-                        </p>
-                    </div>
-                </div>
-                <div className="experience">
-                    <h3>Company</h3>
-                        <h4>Course</h4>
-                        <p>
-                            <span>Start: 02/2025</span>
-                            <br /> 
-                            <span>End: 07/2025</span>    
-                        </p>
-                </div>
+  return (
+    <div className="cv-page-bg">
+      <div className="cv-page">
+        <h1>
+          {formData.firstname} {formData.secondname}
+        </h1>
+        <hr />
+        <div className="main-info">
+          {formData.email && (
+            <div className="info-block">
+              <img className="icon" src={imgs.email} alt="email" />
+              <p>{formData.email}</p>
             </div>
-            <Button backgroundImage='./assets/print.svg' className="print-button" />
+          )}
+
+          {formData.telephone && (
+            <div className="info-block">
+              <img className="icon" src={imgs.tel} alt="telephone" />
+              <p>{formData.telephone}</p>
+            </div>
+          )}
+
+          {formData.linkedin && (
+            <div className="info-block">
+              <img className="icon" src={imgs.linkedin} alt="linkedin" />
+              <p>{formData.linkedin}</p>
+            </div>
+          )}
         </div>
-    )
+
+        <hr />
+        {formData.resume && (
+          <div className="resume">
+            <h2>Resume</h2>
+            <p>{formData.resume}</p>
+          </div>
+        )}
+
+        <hr />
+
+        {formData.university && (
+          <div className="education">
+            <h2>Education</h2>
+            <div>
+              <h3>{formData.university}</h3>
+              <h4>{formData.course}</h4>
+              <p>
+                <span>Start: {formatDate(formData.startCourse)}</span>
+                <br />
+                <span>End: {formatDate(formData.endCourse)}</span>
+              </p>
+            </div>
+          </div>
+        )} 
+
+        <hr />
+
+        {formData.company && (
+          <div className="experience">
+            <h2>Experience</h2>
+            <div>
+              <h3>{formData.company}</h3>
+              <h4>{formData.job}</h4>
+              <p>
+                <span>Start: {formatDate(formData.initialJob)}</span>
+                <br />
+                <span>End: {formatDate(formData.endJob)}</span>
+              </p>
+            </div>
+          </div>
+        )}
+
+        <hr />
+      </div>
+      <Button backgroundImage="./assets/print.svg" className="print-button" />
+    </div>
+  );
 }
