@@ -1,62 +1,22 @@
 import { useState } from "react";
-import Field from "./Field.jsx"
+import Field from "./Field.jsx";
 
-export default function Menu({ modal, title, textOne, textTwo }) {
-    const [isOpen, setIsOpen] = useState(false);
-    const [isModalOpen, setIsModalOpen] = useState(false);
-
-    const buttonImg = isOpen ? 'src/assets/top-arrow.svg' : 'src/assets/bottom.svg';
-
-    const idImg = crypto.randomUUID();
-
-    return (
-        <>
-            <div className="title-menu">
-                <h3>{title}</h3>
-                <button 
-                    onClick={() => {
-                        setIsOpen(!isOpen)
-                        setIsModalOpen(!isModalOpen)
-                    }
-                    }
-                    className="button-menu"
-                >
-                <img 
-                    src={buttonImg} 
-                    id={idImg}
-                    width="25px" 
-                />
-
-                </button>
-
-            {isModalOpen && (
-                <div className="modal">
-                    <div className="modal-content">
-                        <Field name={modal.firstField} type="text" text={textOne} />
-                        <Field name={modal.secondField} type="text" text={textTwo} />
-                        <Field name={modal.initialDate} type="date" text="Start Date" width="50px"/>
-                        <Field name={modal.finalDate} type="date" text="End Date" />
-                        <div className="button-menu-div">
-                            <button className="submit-button" type="submit">
-                            Create
-                            </button>
-                            <button 
-                            onClick={() => 
-                                {
-                                    setIsOpen(false)
-                                    setIsModalOpen(false)
-                                }
-                            }
-                            className="submit-button"
-                            >
-                            Close
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            )}
-            </div>
-
-        </>
-    )
+export default function Menu({ title, fields, inputs, onChange }) {
+  return (
+    <div className="title-menu">
+      <h3>{title}</h3>
+      <div>
+        {fields.map((field) => (
+          <Field
+            key={field.name}
+            text={field.label}
+            type={field.type}
+            name={field.name}
+            value={inputs[field.name] || ""}
+            onChange={onChange}
+          />
+        ))}
+      </div>
+    </div>
+  );
 }
