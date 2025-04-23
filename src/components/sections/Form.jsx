@@ -29,6 +29,7 @@ export default function Form({ inputs, onFormChange }) {
     <>
       <form className="form">
         <fieldset className="first-field">
+            <legend>Info</legend>
           <Field
             text="First Name"
             type="text"

@@ -1,6 +1,11 @@
 import Button from "../Button.jsx";
+import  { useReactToPrint } from "react-to-print";
+import { useRef } from "react";
 
 export default function Page({ formData }) {
+    const contentRef = useRef(null);
+    const reactToPrintFn = useReactToPrint({ contentRef });
+
   const imgs = {
     email: "/src/assets/email.svg",
     tel: "/src/assets/telephone.svg",
@@ -15,35 +20,38 @@ export default function Page({ formData }) {
 
   return (
     <div className="cv-page-bg">
-      <div className="cv-page">
+      <div 
+        className="cv-page"
+        ref={contentRef}
+      >
         <h1>
           {formData.firstname} {formData.secondname}
         </h1>
-        <hr />
+        {/* <hr /> */}
         <div className="main-info">
+        {formData.linkedin && (
+            <div className="info-block">
+              <img className="icon" src={imgs.linkedin} alt="linkedin" />
+              <p>{formData.linkedin}</p>
+            </div>
+          )}
+          
+            {formData.telephone && (
+              <div className="info-block">
+                <img className="icon" src={imgs.tel} alt="telephone" />
+                <p>{formData.telephone}</p>
+              </div>
+            )}
+
           {formData.email && (
             <div className="info-block">
               <img className="icon" src={imgs.email} alt="email" />
               <p>{formData.email}</p>
             </div>
           )}
-
-          {formData.telephone && (
-            <div className="info-block">
-              <img className="icon" src={imgs.tel} alt="telephone" />
-              <p>{formData.telephone}</p>
-            </div>
-          )}
-
-          {formData.linkedin && (
-            <div className="info-block">
-              <img className="icon" src={imgs.linkedin} alt="linkedin" />
-              <p>{formData.linkedin}</p>
-            </div>
-          )}
         </div>
 
-        <hr />
+        {/* <hr /> */}
         {formData.resume && (
           <div className="resume">
             <h2>Resume</h2>
@@ -51,7 +59,7 @@ export default function Page({ formData }) {
           </div>
         )}
 
-        <hr />
+        {/* <hr /> */}
 
         {formData.university && (
           <div className="education">
@@ -68,7 +76,7 @@ export default function Page({ formData }) {
           </div>
         )}
 
-        <hr />
+        {/* <hr /> */}
 
         {formData.company && (
           <div className="experience">
@@ -85,9 +93,13 @@ export default function Page({ formData }) {
           </div>
         )}
 
-        <hr />
+        {/* <hr /> */}
       </div>
-      <Button backgroundImage="./assets/print.svg" className="print-button" />
+      <Button 
+        backgroundImage="./assets/print.svg" 
+        className="print-button" 
+        onClick={() => reactToPrintFn()}
+      />
     </div>
   );
 }
