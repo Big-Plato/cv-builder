@@ -245,3 +245,13 @@ hr {
 .theme:hover {
   cursor: pointer;
 }
+
+@media (max-width: 768px) {
+  :root {
+    grid-template-rows: auto;
+  }
+
+  .main {
+    grid-template-columns: 1fr;
+  }
+}
