@@ -1,6 +1,9 @@
 #root {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  background-color: var(--main-bg);
+  --main-bg: #fffaec;
+  --main-color: rgb(245, 236, 213);
+  --main-header: rgb(87, 142, 126);
+  --main-font-color: rgb(61, 61, 61);
   margin: 0;
   border: 0;
   width: 100vw;
@@ -11,19 +14,17 @@
   justify-content: space-between;
 }
 
-.light-theme {
-  margin: inherit;
-  --main-bg: #fffaec;
-  --main-color: rgb(245, 236, 213);
-  --main-header: rgb(87, 142, 126);
-  --main-font-color: rgb(61, 61, 61);
+[data-theme="dark"] {
+  --main-bg: rgb(34, 40, 49);
+  --main-color: rgb(49, 54, 63);
+  --main-header: rgb(235, 81, 30);
+  --main-font-color: rgb(238, 238, 238);
 }
 
-.dark-theme {
-  --main-bg: rgb(34, 40, 49)
-  --main-color: rgb(49, 54, 63)
-  --main-header: rgb(118, 171, 174)
-  --main-font-color: rgb(238, 238, 238)
+body {
+  margin: inherit;
+  background-color: var(--main-bg);
+  color: var(--main-font-color);
 }
 
 .submit-button {
@@ -78,6 +79,7 @@ h1 {
   grid-template-rows: auto;
   column-gap: 10px;
   overflow-y: auto;
+  scroll-behavior: smooth;
   height: 500px;
 }
 
@@ -204,12 +206,12 @@ hr {
 }
 
 .cv-page {
-  font-size: .8rem;
+  font-size: 0.8rem;
 }
 
 .resume,
 .education,
-.experience, 
+.experience,
 .resume {
   padding: 0 50px 0 50px;
   text-align: justify;
@@ -221,7 +223,9 @@ hr {
   margin: 0;
 }
 
-.education, .experience, .resume {
+.education,
+.experience,
+.resume {
   margin-top: 10px;
 }
 
@@ -230,7 +234,7 @@ hr {
   height: 50px;
   border-radius: 50%;
   margin-right: 20px;
-  background-image: url('/src/assets/sun.svg');
+  background-image: url("/src/assets/sun.svg");
   background-position: center;
   background-repeat: no-repeat;
   background-color: white;
@@ -239,19 +243,3 @@ hr {
 .theme:hover {
   cursor: pointer;
 }
-
-/* @media (prefers-color-scheme: dark) {
-  body {
-    --main-bg: rgb(34, 40, 49)
-    --main-color: rgb(49, 54, 63)
-    --main-header: rgb(118, 171, 174)
-    --main-font-color: rgb(238, 238, 238)
-  }
-
-  body.light-theme {
-    --main-bg: #fffaec;
-    --main-color: rgb(245, 236, 213);
-    --main-header: rgb(87, 142, 126);
-    --main-font-color: rgb(61, 61, 61);
-  }
-} */
