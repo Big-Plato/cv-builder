@@ -16,7 +16,7 @@ export default function Header() {
     <>
       <div className="header">
         <div>
-          <img width="50px" src="../../assets/curriculum-vitae.svg"></img>
+          <img className="img-header" width="50px"></img>
           <h1>CV Builder</h1>
         </div>
         <Button className="theme" onClick={toggleTheme} />
