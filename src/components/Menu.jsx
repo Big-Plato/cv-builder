@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Field from "./Field.jsx";
 
 export default function Menu({ title, fields, inputs, onChange }) {
