@@ -230,6 +230,18 @@ legend {
   font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
+.ico-tel {
+  content: url('/src/assets/telephone.svg');
+}
+
+.ico-linked {
+  content: url('/src/assets/linkedin.svg')
+}
+
+.ico-email {
+  content: url('/src/assets/email.svg')
+}
+
 .education,
 .experience,
 .resume {

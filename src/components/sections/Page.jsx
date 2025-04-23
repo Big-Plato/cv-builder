@@ -6,12 +6,6 @@ export default function Page({ formData }) {
     const contentRef = useRef(null);
     const reactToPrintFn = useReactToPrint({ contentRef });
 
-  const imgs = {
-    email: "/assets/email.svg",
-    tel: "/assets/telephone.svg",
-    linkedin: "/assets/linkedin.svg",
-  };
-
   const formatDate = (dateString) => {
     if (!dateString) return "";
     const [year, month] = dateString.split("-");
@@ -30,21 +24,21 @@ export default function Page({ formData }) {
         {/* <hr /> */}
         <div className="main-info">
         {formData.linkedin && (
-            <div className="info-block">
-              <img className="icon" src={imgs.linkedin} alt="linkedin" />
+            <div className="info-block ico-linked">
+              <img className="icon" alt="linkedin" />
               <p>{formData.linkedin}</p>
             </div>
           )}
             {formData.telephone && (
-              <div className="info-block">
-                <img className="icon" src={imgs.tel} alt="telephone" />
+              <div className="info-block ico-tel">
+                <img className="icon" alt="telephone" />
                 <p>{formData.telephone}</p>
               </div>
             )}
 
           {formData.email && (
-            <div className="info-block">
-              <img className="icon" src={imgs.email} alt="email" />
+            <div className="info-block ico-email">
+              <img className="icon" alt="email" />
               <p>{formData.email}</p>
             </div>
           )}
