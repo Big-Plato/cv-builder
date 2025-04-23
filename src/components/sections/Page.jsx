@@ -1,10 +1,10 @@
 import Button from "../Button.jsx";
-import  { useReactToPrint } from "react-to-print";
+import { useReactToPrint } from "react-to-print";
 import { useRef } from "react";
 
 export default function Page({ formData }) {
-    const contentRef = useRef(null);
-    const reactToPrintFn = useReactToPrint({ contentRef });
+  const contentRef = useRef(null);
+  const reactToPrintFn = useReactToPrint({ contentRef });
 
   const formatDate = (dateString) => {
     if (!dateString) return "";
@@ -14,27 +14,24 @@ export default function Page({ formData }) {
 
   return (
     <div className="cv-page-bg">
-      <div 
-        className="cv-page"
-        ref={contentRef}
-      >
+      <div className="cv-page" ref={contentRef}>
         <h1>
           {formData.firstname} {formData.secondname}
         </h1>
         {/* <hr /> */}
         <div className="main-info">
-        {formData.linkedin && (
+          {formData.linkedin && (
             <div className="info-block">
               <img className="icon ico-linked" alt="linkedin" />
               <p>{formData.linkedin}</p>
             </div>
           )}
-            {formData.telephone && (
-              <div className="info-block">
-                <img className="icon ico-tel" alt="telephone" />
-                <p>{formData.telephone}</p>
-              </div>
-            )}
+          {formData.telephone && (
+            <div className="info-block">
+              <img className="icon ico-tel" alt="telephone" />
+              <p>{formData.telephone}</p>
+            </div>
+          )}
 
           {formData.email && (
             <div className="info-block">
@@ -88,9 +85,9 @@ export default function Page({ formData }) {
 
         {/* <hr /> */}
       </div>
-      <Button 
-        backgroundImage="./assets/print.svg" 
-        className="print-button" 
+      <Button
+        backgroundImage="./assets/print.svg"
+        className="print-button"
         onClick={() => reactToPrintFn()}
       />
     </div>

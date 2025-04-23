@@ -158,7 +158,6 @@ input {
   background-repeat: no-repeat;
   background-position: center;
   margin: 0 0 10px 400px;
-
 }
 
 .print-button:hover {
@@ -194,7 +193,7 @@ input {
   align-items: center;
   margin: 0;
   gap: 10px;
-  line-height: .2;
+  line-height: 0.2;
 }
 
 /* hr {
@@ -227,19 +226,19 @@ input {
 legend {
   font-weight: bolder;
   font-size: 1.2rem;
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .ico-tel {
-  content: url('/src/assets/telephone.svg');
+  content: url("/src/assets/telephone.svg");
 }
 
 .ico-linked {
-  content: url('/src/assets/linkedin.svg');
+  content: url("/src/assets/linkedin.svg");
 }
 
 .ico-email {
-  content: url('/src/assets/email.svg');
+  content: url("/src/assets/email.svg");
 }
 
 .education,
@@ -249,7 +248,7 @@ legend {
 }
 
 .img-header {
-  content: url("/src/assets/curriculum-vitae.svg")
+  content: url("/src/assets/curriculum-vitae.svg");
 }
 
 .theme {
