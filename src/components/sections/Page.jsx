@@ -7,9 +7,9 @@ export default function Page({ formData }) {
     const reactToPrintFn = useReactToPrint({ contentRef });
 
   const imgs = {
-    email: "/src/assets/email.svg",
-    tel: "/src/assets/telephone.svg",
-    linkedin: "/src/assets/linkedin.svg",
+    email: "/assets/email.svg",
+    tel: "/assets/telephone.svg",
+    linkedin: "/assets/linkedin.svg",
   };
 
   const formatDate = (dateString) => {
@@ -35,7 +35,6 @@ export default function Page({ formData }) {
               <p>{formData.linkedin}</p>
             </div>
           )}
-          
             {formData.telephone && (
               <div className="info-block">
                 <img className="icon" src={imgs.tel} alt="telephone" />
