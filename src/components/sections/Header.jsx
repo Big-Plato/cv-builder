@@ -1,24 +1,16 @@
 import Button from "../Button.jsx";
+import { useEffect, useState } from "react";
 
 export default function Header() {
-  const body = document.querySelector('body');
-  body.setAttribute('data-theme', 'light')
-  const setDarkMode = () => {
-    body.setAttribute('data-theme', 'dark');
-  }
+  const [theme, setTheme] = useState("light");
 
-  const setLightMode = () => {
-    body.setAttribute('data-theme', 'light');
-  }
+  useEffect(() => {
+    document.body.setAttribute("data-theme", theme);
+  }, [theme]);
 
-  const toggleTheme = (e) => {
-    if (body.getAttribute('data-theme') === 'dark') {
-      console.log('ok')
-      setLightMode();
-    } else {
-      setDarkMode();
-    }
-  }
+  const toggleTheme = () => {
+    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
+  };
 
   return (
     <>
@@ -27,10 +19,7 @@ export default function Header() {
           <img width="50px" src="/src/assets/curriculum-vitae.svg"></img>
           <h1>CV Builder</h1>
         </div>
-        <Button 
-          className='theme'
-          onChange={toggleTheme}
-        />
+        <Button className="theme" onClick={toggleTheme} />
       </div>
     </>
   );
