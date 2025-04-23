@@ -1,12 +1,54 @@
-# React + Vite
+# 📄 CV Builder - React Application  
+**A dynamic resume builder with real-time preview and theme customization**  
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## ✨ Features  
+- **🎨 Dark/Light Mode** - Toggle between themes with CSS variables  
+- **⚡ Real-time Preview** - Instant updates as you type  
+- **🖨️ Export Options** - Print or save as PDF  
+- **📱 Responsive Design** - Works on all devices  
 
-Currently, two official plugins are available:
+## 🛠️ Technologies  
+`React 18` `Hooks` `react-to-print`  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Quick Start  
 
-## Expanding the ESLint configuration
+```bash
+git clone https://github.com/Big-Plato/cv-builder.git
+cd cv-builder
+npm install
+npm start
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🏗️ Project Structure
+```
+src/
+├── components/  # Reusable UI pieces
+├── sections/    # Main app sections
+├── App.js       # Root component
+└── index.js     # Entry point
+```
+
+## 🧠 Key Concepts Implemented
+- State Management - `useState` for form data
+- Component Composition - Reusable Field components
+- CSS Variables - Dynamic theming
+- PDF Generation - `react-to-print` integration
+
+## 📝 Usage Guide
+- Fill in personal details
+- Add education/experience entries
+- Toggle theme via header button
+- Export using print button
+
+## 🤝 Contributing
+1. Fork the repository
+2. Create your feature branch
+3. Commit your changes
+4. Push to the branch
+5. Open a Pull Request
+
+## 🌐 Live Demo
+[Vercel](https://cv-builder-six-sigma.vercel.app/)
+
+## 📜 License
+MIT © Big-Plato
