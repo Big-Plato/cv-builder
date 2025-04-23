@@ -24,21 +24,21 @@ export default function Page({ formData }) {
         {/* <hr /> */}
         <div className="main-info">
         {formData.linkedin && (
-            <div className="info-block ico-linked">
-              <img className="icon" alt="linkedin" />
+            <div className="info-block">
+              <img className="icon ico-linked" alt="linkedin" />
               <p>{formData.linkedin}</p>
             </div>
           )}
             {formData.telephone && (
-              <div className="info-block ico-tel">
-                <img className="icon" alt="telephone" />
+              <div className="info-block">
+                <img className="icon ico-tel" alt="telephone" />
                 <p>{formData.telephone}</p>
               </div>
             )}
 
           {formData.email && (
-            <div className="info-block ico-email">
-              <img className="icon" alt="email" />
+            <div className="info-block">
+              <img className="icon ico-email" alt="email" />
               <p>{formData.email}</p>
             </div>
           )}

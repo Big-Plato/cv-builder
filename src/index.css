@@ -235,11 +235,11 @@ legend {
 }
 
 .ico-linked {
-  content: url('/src/assets/linkedin.svg')
+  content: url('/src/assets/linkedin.svg');
 }
 
 .ico-email {
-  content: url('/src/assets/email.svg')
+  content: url('/src/assets/email.svg');
 }
 
 .education,
